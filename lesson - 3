@@ -1,0 +1,101 @@
+#1
+def exe_1(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return 'No / 0'
+    except ValueError:
+        return 'No value'
+ 
+ 
+def exe_1_use():
+    print(exe_1((int(input('Enter first number: '))), (int(input('Enter second number: ')))))
+
+
+#2
+def exe_2(**kwargs):
+    return list(kwargs.values())
+ 
+ 
+def exe_2_use():
+    print(exe_2(name=input('Enter name: '),
+                s_name=input('Enter second name: '),
+                b_date=input('Enter birth day: '),
+                l_town=input('Enter live town: '),
+                email=input('Enter email: '),
+                tel=input('Enter tel number: ')))
+
+#3
+def exe_3(a, b, c):
+    z = [a, b, c]
+    z.remove(min(a, b, c))
+    return sum(z)
+ 
+ 
+def exe_3_use():
+    print(exe_3(7, 1, 8))
+
+#4
+def exe_4(x, y):
+    return 1 / x ** abs(y)
+ 
+ 
+def exe_4_use():
+    print(exe_4(2, -2))
+ 
+ 
+def exe_41(x, y):
+    for i in range(abs(y - 1)):
+        x *= x
+    return 1 / x
+ 
+ 
+def exe_41_use():
+    print(exe_4(2, -2))
+
+#5
+def exe_5():
+    res = 0
+    while True:
+        numbers = input('Enter list of number or * to exit: ').split()
+        for i in numbers:
+            try:
+                if i == '*':
+                    print(f'Sum is {res}. Exit')
+                    return
+                else:
+                    res += int(i)
+            except ValueError:
+                print('Enter number or *')
+        print(f'Sum is {res}')
+
+#6
+def exe_6(text):
+    ls = []
+    for i in range(len(text)):
+        ls.append(text[i][0:1].title() + text[i][1:])
+    return ' '.join(ls)
+ 
+ 
+def exe_6_use():
+    print(exe_6(input('Input text: ').split()))
+ 
+ 
+def sep():
+    print('+' * 30)
+ 
+ 
+def refresh():
+    print('Выберите задание и его решение')
+    sep()
+    print('Задание 1. Введите: 1')
+    sep()
+    print('Задание 2. Введите: 2')
+    sep()
+    print('Задание 3. Введите: 3')
+    sep()
+    print('Задание 4. Введите: 4 или 41 (2 решения)')
+    sep()
+    print('Задание 5. Введите: 5')
+    sep()
+    print('Задание 6. Введите: 6\n')
